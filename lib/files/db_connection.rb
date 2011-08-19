@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-DB_ADAPTER = 'postgres'
+DB_ADAPTER = 'postgresql'
 DB_HOST = 'localhost'
 DATABASE = 'locusdb'
 DB_USERNAME = 'tools'
