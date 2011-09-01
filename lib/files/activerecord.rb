@@ -57,7 +57,7 @@ module LocusDB
   
   class XrefDolloGrouping < DBConnection
   
-  	set_primary_ids :dollo_node_id,:grouping_id
+  	#set_primary_keys :dollo_node_id, :grouping_id
   	belongs_to :dollo_node, :foreign_key => "dollo_node_id"
   	belongs_to :grouping, :foreign_key => "grouping_id"
   	
