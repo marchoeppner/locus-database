@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'bio'
 require 'active_record'
 require 'composite_primary_keys'
 
