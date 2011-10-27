@@ -82,7 +82,7 @@ module LocusDB
     end
     
     def output_phylip
-    	tree_string = self.tree_string
+    	tree_string = self.tree_string.clone
         tree_organisms = self.tree.leaves.collect{|t| t.name.strip }
         tree_organisms.each do |t_o|
       		phylip_name = t_o.gsub(/\s/, '_')[0..9].capitalize
@@ -113,8 +113,8 @@ module LocusDB
   end # genomic_align_block
   
   class DolloNode < DBConnection
-    set_primary_keys :dollo_id, :dataset_id
-    has_many :xref_dollo_groupings
+
+    has_many :xref_dollo_groupings, :foreign_key => "dollo_node_id"
     
     def get_parent
         return nil if self.child_of.nil?
