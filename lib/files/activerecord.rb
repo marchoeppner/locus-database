@@ -21,7 +21,7 @@ module LocusDB
   class Grouping < DBConnection
     set_primary_key 'id'
     has_many :xref_gene_groupings
-    has_many :xref_dollo_groupings
+    has_many :xref_grouping_dollo_nodes
     #has_many :genes, :through => :xref_gene_groupings
     
     def state_at_node?(node) 				
@@ -55,7 +55,7 @@ module LocusDB
       
   end # grouping
   
-  class XrefDolloGrouping < DBConnection
+  class XrefGroupingDolloNode < DBConnection
   
   	#set_primary_keys :dollo_node_id, :grouping_id
   	belongs_to :dollo_node, :foreign_key => "dollo_node_id"
